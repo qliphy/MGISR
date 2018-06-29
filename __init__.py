@@ -115,7 +115,7 @@ class ISR_Exporter(export_v4.ProcessExporterFortranMEGroup):
 #    example: new_output = {'myformat': MYCLASS}
 #    madgraph will then allow the command "output myformat PATH"
 #    MYCLASS should inherated of the class madgraph.iolibs.export_v4.VirtualExporter 
-new_output = {'EE': ISR_Exporter}
+new_output = {'EE_ISR': ISR_Exporter}
 
 # 2. Define new way to handle the cluster.
 #    example new_cluster = {'mycluster': MYCLUSTERCLASS}
