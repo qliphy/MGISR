@@ -55,7 +55,7 @@ class ISR_Exporter(export_v4.ProcessExporterFortranMEGroup):
 
         # No need of this one automatic with lpp=9 
         #cp(pjoin(rootdir, 'pdg2pdf.f'), pjoin(self.dir_path, 'Source','PDF'))
-        cp(pjoin(rootdir, 'reweight.f'), pjoin(self.dir_path, 'SubProcesses')) 
+        #cp(pjoin(rootdir, 'reweight.f'), pjoin(self.dir_path, 'SubProcesses')) 
         
         filename = pjoin(self.dir_path, 'Cards', 'me5_configuration.txt')
         self.cmd.do_save('options %s' % filename.replace(' ', '\ '), check=False,
