@@ -214,8 +214,8 @@ c        Set stot
             if (abs(lpp(1)) .eq. 3) m1 = 0.000511d0
             if (abs(lpp(2)) .eq. 3) m2 = 0.000511d0
             if (abs(lpp(1)) .eq. 3 .and. abs(lpp(2)) .eq. 3) then
-                  ebeam(1)=ebeam(1)*0.999999d0
-                  ebeam(2)=ebeam(2)*0.999999d0
+                  ebeam(1)=ebeam(1)*0.9999d0
+                  ebeam(2)=ebeam(2)*0.9999d0
             endif
             if(ebeam(1).lt.m1) ebeam(1)=m1
             if(ebeam(2).lt.m2) ebeam(2)=m2
