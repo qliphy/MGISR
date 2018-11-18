@@ -6,4 +6,4 @@ Put it under MG/Plugin. After generating a process, output to a directory：
 The only difference from nominal way is "EE_ISR" added above
 
 Note:  Master branch is being developed;
-       Branch mg262 is frozen and can work with MG242
+       Branch mg262 is frozen and can work with MG262
