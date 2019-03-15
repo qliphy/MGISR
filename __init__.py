@@ -44,7 +44,7 @@ class ISR_Exporter(export_v4.ProcessExporterFortranMEGroup):
 
         # Add dedicated functions in dummy_fct.f
         files = ["dummy_fct.f"]#, "pdg2pdf.f", "reweight.f"]
-        remove_list = [['get_dummy_x1_x2']]#,["store_events","write_leshouche"],["setclscales"]]
+        remove_list = [['get_dummy_x1_x2', 'dummy_boostframe']]#,["store_events","write_leshouche"],["setclscales"]]
         for name, to_rm in zip(files, remove_list):
             template = open(pjoin(self.dir_path, "SubProcesses", name),"r").read()
             plugin = open(pjoin(plugin_dir, "Templates",name),"r").read()
@@ -107,8 +107,6 @@ class ISR_Exporter(export_v4.ProcessExporterFortranMEGroup):
         # just point a pointer
         self.cmd = cmd
         return super(ISR_Exporter, self).pass_information_from_cmd(cmd)
-        
-
 
 
 # 1. Define new output mode
@@ -134,6 +132,6 @@ new_interface = None
 __author__ = 'Cheng Chen, Zhengwei Cui, Gang Li, Qiang Li, Xin Mo, Manqi Ruan, Lei Wang, Qi-Shu Yan'
 __email__ = 'qliphy@gmail.com, olivier.mattelaer@uclouvain.be'
 __version__ = (1,1,0)
-minimal_mg5amcnlo_version = (2,6,0) 
+minimal_mg5amcnlo_version = (2,6,6) 
 maximal_mg5amcnlo_version = (1000,1000,1000)
-latest_validated_version = (2,6,4)
+latest_validated_version = (2,6,6)

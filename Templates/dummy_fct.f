@@ -234,3 +234,11 @@ c--initialization of coefficients for polylogarithms-liq
  
       return
       end
+
+      logical function dummy_boostframe()
+      implicit none
+c
+c
+      dummy_boostframe = .true.
+      return
+      end
