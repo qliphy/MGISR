@@ -51,19 +51,21 @@ c--alternative -liq
       real*8 X(2)
       real*8 felectron
       real*8 alpha
-      real*8 xin
+      real*8 xin,xin2
       real*8 PI
-      real*8 feps
+      real*8 feps,feps2
       IF (S .LT. SMIN) THEN
          PRINT*,'ERROR CMS ENERGY LESS THAN MINIMUM CMS ENERGY',S,SMIN
          RETURN
       ENDIF
       data xin/0.511d-3/ !electron mass in GeV
+      data xin2/105.7d-3/ !muon mass in GeV      
       alpha = 1d0/137d0
       data PI/3.1415926535897932384626433832795028841971693993751d0/
-       feps=alpha/PI*(dlog(S/xin/xin)-1.d0) 
+      feps=alpha/PI*(dlog(S/xin/xin)-1.d0) 
+      feps2=alpha/PI*(dlog(S/xin2/xin2)-1.d0) 
        X1=1.d0-(1.d0-X(1))**(1.d0/feps)
-       X2=1.d0-(1.d0-X(2))**(1.d0/feps)
+       X2=1.d0-(1.d0-X(2))**(1.d0/feps2)
        if(X1.gt.1.0d0) then
            X1=1.0d0
        endif
@@ -71,7 +73,7 @@ c--alternative -liq
            X2=1.0d0
        endif
        SJACOBI1=felectron(X1,X(1),feps)
-       SJACOBI2=felectron(X2,X(2),feps)
+       SJACOBI2=felectron(X2,X(2),feps2)
        SJACOBI=sjacobi*SJACOBI1*SJACOBI2
       END
 
